@@ -7,12 +7,12 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  @title Decentralized Stable coin
- @author Ezio99
+ @author Vaibhav Deb
 Collateral: Exogenous (ETH and BTC)
 Minting: Algorithmic
 Relative Stability: Pegged to USD
 
-Contract to be controlled by DSCEngine.
+Contract to be controlled by EZCEngine.
 
 This contract is just the ERC20 implementation of the stablecoin
  */
@@ -46,7 +46,7 @@ contract DecentralizedStableCoin is ERC20Burnable, Ownable {
         if(_amount <=0){
             revert DecentralizedStableCoin__BurnAmountCantBe0();
         }
-        super._mint(_to,_amount);
+        _mint(_to,_amount);
         return true;
     }
 
